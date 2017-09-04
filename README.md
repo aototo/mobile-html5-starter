@@ -6,10 +6,14 @@
 
 ### 使用步骤
 
-  $ npm install
-  $ npm start
-  $ npm build
-  $ npm buildCDN
+  $npm install 
+  
+  $npm start
+  
+  $npm build
+  
+  $npm buildCDN
+  
 
 
 具体配置可以在build/config.js 文件修改，包括cdn，ip地址等....
