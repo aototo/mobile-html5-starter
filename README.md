@@ -7,10 +7,13 @@
 ### 使用步骤
 
     $ npm install  //下载
+    
   
     $ npm start    //启动
+    
   
     $ npm build    //发布
+    
   
     $ npm buildCDN  //启动cdn资源
   
