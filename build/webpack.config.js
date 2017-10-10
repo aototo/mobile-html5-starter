@@ -39,7 +39,7 @@ const webpackConfig = {
     root: path_base,
     extensions: ['', '.js', '.jsx', '.json'],
     alias: {
-      imageBase: create_folder_path_for_app('assets/images'), //图片资源alias
+      imageBase: create_folder_path_for_app('assets/images'), //图片alias
     },
   },
   node: {
@@ -104,7 +104,7 @@ webpackConfig.module.loaders.push({
   test: /\.scss$/,
   loaders: [
     "style-loader",
-    "css-loader",
+    BASE_CSS_LOADER,
     'postcss-loader',
     "sass-loader?sourceMap"
   ]

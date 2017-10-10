@@ -5,7 +5,10 @@ import $ from 'jquery';
 
 // import './lib/vconsole.min.js' 开启移动端console
 
-/* 限制浏览器上下滑动 */ 
+/* 限制浏览器上下滑动 */
 document.addEventListener('touchmove', function (e) {
   e.preventDefault();
 },true);
+
+
+console.log($('.container').width());
