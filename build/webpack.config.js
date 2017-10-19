@@ -80,7 +80,7 @@ const output_name    = `js/[name].[hash].js`;
 webpackConfig.output = {
   filename: output_name,
   path    : bundle_path,
-  publicPath: is_cdn ? config.cdn_url : '/', //可配置cdn
+  publicPath: is_cdn ? config.cdn_url : './', //可配置cdn
 }
 
 
@@ -100,15 +100,31 @@ webpackConfig.module.loaders.push({
 })
 
 //'webpack-module-hot-accept'
-webpackConfig.module.loaders.push({
-  test: /\.scss$/,
-  loaders: [
-    "style-loader",
-    BASE_CSS_LOADER,
-    'postcss-loader',
-    "sass-loader?sourceMap"
-  ]
-})
+//
+
+if (!__DEV__) {
+  webpackConfig.module.loaders.push({
+    test: /\.scss$/,
+    loader: ExtractTextPlugin.extract(
+      "style",
+      `${BASE_CSS_LOADER}!postcss!sass-loader?sourceMap`,
+      {
+        "publicPath": is_cdn ? config.cdn_url : '../'
+      }
+    )
+  })
+} else {
+  webpackConfig.module.loaders.push({
+    test: /\.scss$/,
+    loaders: [
+      "style-loader",
+      BASE_CSS_LOADER,
+      'postcss-loader',
+      "sass-loader?sourceMap"
+    ]
+  })
+}
+
 
 webpackConfig.module.loaders.push({
   test: /\.css$/,
@@ -240,9 +256,13 @@ if (!__DEV__) {
     delete loader.loaders
   })
 
+  // ExtractTextPlugin.extract({
+  //   publicPath: '../',
+  // })
+
   webpackConfig.plugins.push(
     new ExtractTextPlugin('css/[contenthash].css', {
-      allChunks: true
+      allChunks: true,
     })
   )
 }

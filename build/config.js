@@ -9,7 +9,7 @@ const config = {
   port: 8080,
   host: ip.address() || 'localhost',
   is_cdn: process.env.CDN || false,
-  cdn_url : 'http://www.baidu.com'
+  cdn_url : 'http://www.baidu.com/'
 };
 
 // ==============
