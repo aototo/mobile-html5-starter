@@ -25,7 +25,6 @@ let wechatEvent = function(shareEvent) {
       cancel: function () {
       }
   });
-
 }
 
 
