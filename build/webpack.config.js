@@ -153,8 +153,6 @@ webpackConfig.module.loaders.push(
   }
 )
 
-
-
 // 下面是给图片添加cdn的
 // webpackConfig.module.loaders.push({
 //   test: /\.(png|jpg|gif)$/,
@@ -178,8 +176,6 @@ webpackConfig.sassLoader = {
 webpackConfig.postcss = [
   require('autoprefixer')
 ]
-
-
 
 // ------------------------------------
 // plugins

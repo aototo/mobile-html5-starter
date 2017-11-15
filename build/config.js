@@ -4,6 +4,7 @@ var ip = require("ip");
 // ==============
 // base config
 // ==============
+
 const config = {
   env : process.env.NODE_ENV || false,
   port: 8080,
@@ -12,10 +13,14 @@ const config = {
   cdn_url : 'http://www.baidu.com/'
 };
 
+
 // ==============
 // globals
 // ==============
+
 debug('globals variable');
+
+console.log(JSON.stringify(config.env));
 
 config.globals = {
   'process.env': {
