@@ -20,8 +20,6 @@ const config = {
 
 debug('globals variable');
 
-console.log(JSON.stringify(config.env));
-
 config.globals = {
   'process.env': {
     'NODE_ENV':  JSON.stringify(config.env)
