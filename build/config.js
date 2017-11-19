@@ -1,5 +1,5 @@
-const debug   = require('debug')('app:configJs');
-var ip = require("ip");
+const debug = require('debug')('app:configJs');
+const ip    = require("ip");
 
 // ==============
 // base config
