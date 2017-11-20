@@ -7,7 +7,7 @@ module.exports = {
     "extends": "eslint:recommended",
     "parserOptions": {
         "ecmaFeatures": {
-            "jsx": true
+            "jsx": false
         },
         "sourceType": "module"
     },
@@ -26,7 +26,7 @@ module.exports = {
         ],
         "semi": [
             "error",
-            "never"
+            "always"
         ]
     }
 };
