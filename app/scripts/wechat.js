@@ -1,3 +1,5 @@
+
+/* global wx */
 let wechatEvent = function(shareEvent) {
   // 获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
 	wx.onMenuShareTimeline({
@@ -25,6 +27,6 @@ let wechatEvent = function(shareEvent) {
 		cancel: function () {
 		}
 	});
-}
+};
 
 export default wechatEvent;

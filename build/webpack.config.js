@@ -3,7 +3,7 @@ const debug             = require('debug')('app:webpack:config');
 const path              = require('path');
 const glob              = require('glob');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const __DEV__           = process.env.NODE_ENV == 'development';
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const config            = require('./config');
@@ -52,10 +52,10 @@ const webpackConfig = {
 // Entry Points
 // --------------------------
 webpackConfig.entry = {
-  app: __DEV__
-      ? [app_index_path].concat(["webpack/hot/only-dev-server", `webpack-dev-server/client?http://${host}:${port}/`])
+	app: __DEV__
+      ? [app_index_path].concat(['webpack/hot/only-dev-server', `webpack-dev-server/client?http://${host}:${port}/`])
       : app_index_path,
-}
+};
 
 
 // // 获取所有入口文件
@@ -75,12 +75,12 @@ webpackConfig.entry = {
 // --------------------------
 // Bundle Output
 // --------------------------
-const output_name    = `js/[name].[hash].js`;
+const output_name    = 'js/[name].[hash].js';
 
 webpackConfig.output = {
-  filename: output_name,
-  path    : bundle_path,
-  publicPath: is_cdn ? config.cdn_url : './', //可配置cdn
+	filename: output_name,
+	path    : bundle_path,
+	publicPath: is_cdn ? config.cdn_url : './', //可配置cdn
 }
 
 
@@ -92,49 +92,49 @@ const BASE_CSS_LOADER = 'css-loader?sourceMap&-minimize'
 
 webpackConfig.module.loaders = [];
 webpackConfig.module.loaders.push({
-  test: /\.js$/,
-  exclude: /node_modules/,
-  loaders: [
-    'babel',
-  ]
-})
+	test: /\.js$/,
+	exclude: /node_modules/,
+	loaders: [
+		'babel',
+	]
+});
 
 //'webpack-module-hot-accept'
 //
 
 if (!__DEV__) {
-  webpackConfig.module.loaders.push({
-    test: /\.scss$/,
-    loader: ExtractTextPlugin.extract(
-      "style",
+	webpackConfig.module.loaders.push({
+		test: /\.scss$/,
+		loader: ExtractTextPlugin.extract(
+      'style',
       `${BASE_CSS_LOADER}!postcss!sass-loader?sourceMap`,
-      {
-        "publicPath": is_cdn ? config.cdn_url : '../'
-      }
+			{
+        'publicPath': is_cdn ? config.cdn_url : '../'
+			}
     )
-  })
+	})
 } else {
-  webpackConfig.module.loaders.push({
-    test: /\.scss$/,
-    loaders: [
-      "style-loader",
-      BASE_CSS_LOADER,
-      'postcss-loader',
-      "sass-loader?sourceMap"
-    ]
-  })
+	webpackConfig.module.loaders.push({
+		test: /\.scss$/,
+		loaders: [
+			'style-loader',
+			BASE_CSS_LOADER,
+			'postcss-loader',
+			'sass-loader?sourceMap'
+		]
+	});
 }
 
 
 webpackConfig.module.loaders.push({
-  test: /\.css$/,
-  exclude: null,
-  loaders: [
-    'style-loader',
-    BASE_CSS_LOADER,
-    'postcss-loader'
-  ]
-})
+	test: /\.css$/,
+	exclude: null,
+	loaders: [
+		'style-loader',
+		BASE_CSS_LOADER,
+		'postcss-loader'
+	]
+});
 
 
 // ------------------------------------
@@ -143,15 +143,15 @@ webpackConfig.module.loaders.push({
 // ------------------------------------
 
 webpackConfig.module.loaders.push(
-  {
-    test: /\.(png|jpg|gif)$/,
-    loader: 'url-loader?limit=10000&name=images/[hash][name].[ext]'
-  },
-  {
-    test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-    loader: 'file-loader?name=fonts/[name].[ext]'
-  }
-)
+	{
+		test: /\.(png|jpg|gif)$/,
+		loader: 'url-loader?limit=10000&name=images/[hash][name].[ext]'
+	},
+	{
+		test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+		loader: 'file-loader?name=fonts/[name].[ext]'
+	}
+);
 
 // 下面是给图片添加cdn的
 // webpackConfig.module.loaders.push({
@@ -164,17 +164,17 @@ webpackConfig.module.loaders.push(
 webpackConfig.module.loaders.push({
   // html模板加载器，可以处理引用的静态资源，默认配置参数attrs=img:src，处理图片的src引用的资源
   // 比如你配置，attrs=img:src img:data-src就可以一并处理data-src引用的资源了，就像下面这样
-  test: /\.html$/,
-  loader: 'html?attrs=img:src img:data-src'
+	test: /\.html$/,
+	loader: 'html?attrs=img:src img:data-src'
 })
 
 //include style file Path
 webpackConfig.sassLoader = {
-  includePaths: create_folder_path_for_app('style')
+	includePaths: create_folder_path_for_app('style')
 }
 
 webpackConfig.postcss = [
-  require('autoprefixer')
+	require('autoprefixer')
 ]
 
 // ------------------------------------
@@ -184,13 +184,13 @@ const html_path = path.resolve(path_base, 'app/index.html');
 
 // HtmlWebpackPlugin
 webpackConfig.plugins = [
-  new HtmlWebpackPlugin({
-    title: 'My App',
-    template: html_path,
-    filename: 'index.html',
-    chunks: ['app'],
-    showErrors: true,
-  }),
+	new HtmlWebpackPlugin({
+		title: 'My App',
+		template: html_path,
+		filename: 'index.html',
+		chunks: ['app'],
+		showErrors: true,
+	}),
 
   // 静态资源cope
   // new CopyWebpackPlugin([
