@@ -52,7 +52,12 @@
     "url-loader": "^0.5.9",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.16.3",
-    "webpack-module-hot-accept": "^1.0.4"
+    "webpack-module-hot-accept": "^1.0.4",
+    "eslint": "^3.14.0",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0"
   },
   "keywords": [],
   "description": ""
