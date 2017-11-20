@@ -13,6 +13,7 @@ const config = {
   cdn_url : 'http://www.baidu.com/'
 };
 
+var a = "asd";
 
 // ==============
 // globals
