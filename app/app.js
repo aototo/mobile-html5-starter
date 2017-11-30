@@ -11,4 +11,5 @@ document.addEventListener('touchmove', function (e) {
 	function foo(a) {
 		console.log();
 	}
+
 },true);
