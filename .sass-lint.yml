@@ -1,4 +1,3 @@
-
 #########################
 ## Sample Sass Lint File
 #########################
@@ -7,6 +6,7 @@ options:
   # Don't merge default rules
   merge-default-rules: false
   # Set the formatter to 'html'
+  formatter: html
   # Raise an error if more than 50 warnings are generated
   max-warnings: 50
 # File Options
@@ -36,12 +36,3 @@ rules:
     - 2
     -
       size: tab
-  property-sort-order:
-    - 1
-    -
-      order:
-        - display
-        - margin
-      ignore-custom-properties: true
-  variable-for-property:
-    - 2
