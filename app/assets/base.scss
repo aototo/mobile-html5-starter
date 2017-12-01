@@ -1,39 +1,41 @@
 // Created by aotu 2017.
-
 /*======================================================================
       Global
   ======================================================================*/
 * {
-  padding: 0;
-  margin: 0;
-  outline: none;
+	margin: 0;
+	outline: none;
+	padding: 0;
 }
 
 html {
-  height: 100%;
-  font-family: "microsoft yahei", Arial, "Helvetica Neue", Helvetica, sans-serif;
+	height: 100%;
+	font-family: "microsoft yahei", Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 body {
-  height: 100%;
-  overflow: hidden;
-  margin: 0  auto;
+	margin: 0 auto;
+	height: 100%;
+	overflow: hidden;
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 li {
-  list-style: none;
+	list-style: none;
 }
 
-p, a, button, span {
-  -webkit-font-smoothing: antialiased;
+a,
+button,
+p,
+span {
+	-webkit-font-smoothing: antialiased;
 }
 
 input {
-  outline: none;
+	outline: none;
 }
 
 .clearfix {
@@ -41,21 +43,23 @@ input {
 }
 
 .clearfix:after {
-	 visibility: hidden;
-     display: block;
-     font-size: 0;
-     content: " ";
-     clear: both;
-     height: 0;
- }
+	display: block;
+	visibility: hidden;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
 
-.pa { position: absolute; }
+.pa {
+	position: absolute;
+}
 
 @font-face {
-    font-family: cityb;
-    src: url('../assets/fonts/cityb.ttf');
+	font-family: cityb;
+	src: url("../assets/fonts/cityb.ttf");
 }
 
 .fonts {
-  font-family: 'cityb';
+	font-family: 'cityb';
 }

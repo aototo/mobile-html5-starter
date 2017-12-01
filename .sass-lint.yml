@@ -1,3 +1,4 @@
+
 #########################
 ## Sample Sass Lint File
 #########################
@@ -6,14 +7,11 @@ options:
   # Don't merge default rules
   merge-default-rules: false
   # Set the formatter to 'html'
-  formatter: html
-  # Output file instead of logging results
-  output-file: 'linters/sass-lint.html'
   # Raise an error if more than 50 warnings are generated
   max-warnings: 50
 # File Options
 files:
-  include: './app/assets/*.s+(a|c)ss'
+  include: 'app/**/*.s+(a|c)ss'
 # Rule Configuration
 rules:
   extends-before-mixins: 2
@@ -37,7 +35,7 @@ rules:
   indentation:
     - 2
     -
-      size: 2
+      size: tab
   property-sort-order:
     - 1
     -
@@ -47,7 +45,3 @@ rules:
       ignore-custom-properties: true
   variable-for-property:
     - 2
-    -
-      properties:
-        - margin
-        - content
