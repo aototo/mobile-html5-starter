@@ -12,40 +12,40 @@
     <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script>
         $.ajax({
-            url: 'http://mercurymage.com:18080/wechat_sdk/getsignature' // 此处url请求地址需要替换成你自己实际项目中服务器数字签名服务地址
-            ,
-            type: 'post',
-            data: {
-                url: location.href.split('#')[0] // 将当前URL地址上传至服务器用于产生数字签名
-            }
+        	url: 'http://mercurymage.com:18080/wechat_sdk/getsignature' // 此处url请求地址需要替换成你自己实际项目中服务器数字签名服务地址
+        	,
+        	type: 'post',
+        	data: {
+        		url: location.href.split('#')[0] // 将当前URL地址上传至服务器用于产生数字签名
+        	}
         }).done(function(r) {
-            // 返回了数字签名对象
-            // console.log(r);
-            // console.log(r.appid);
-            // console.log(r.timestamp);
-            // console.log(r.nonceStr);
-            // console.log(r.signature);
-            // 开始配置微信JS-SDK
-            wx.config({
-                debug: false,
-                appId: r.appId,
-                timestamp: r.timestamp,
-                nonceStr: r.nonceStr,
-                signature: r.signature,
-                jsApiList: [
-                    'checkJsApi',
-                    'onMenuShareTimeline',
-                    'onMenuShareAppMessage',
-                    'onMenuShareQQ',
-                    'onMenuShareWeibo',
-                    'hideMenuItems',
-                    'chooseImage'
-                ]
-            });
+        	// 返回了数字签名对象
+        	// console.log(r);
+        	// console.log(r.appid);
+        	// console.log(r.timestamp);
+        	// console.log(r.nonceStr);
+        	// console.log(r.signature);
+        	// 开始配置微信JS-SDK
+        	wx.config({
+        		debug: false,
+        		appId: r.appId,
+        		timestamp: r.timestamp,
+        		nonceStr: r.nonceStr,
+        		signature: r.signature,
+        		jsApiList: [
+        			'checkJsApi',
+        			'onMenuShareTimeline',
+        			'onMenuShareAppMessage',
+        			'onMenuShareQQ',
+        			'onMenuShareWeibo',
+        			'hideMenuItems',
+        			'chooseImage'
+        		]
+        	});
 
-            wx.ready(function() {
+        	wx.ready(function() {
 
-            });
+        	});
         });
     </script>
 </head>

@@ -5,14 +5,14 @@ const ip    = require('ip');
 // base config
 // ==============
 
-/* global process */ 
+/* global process */
 
 const config = {
-	env : process.env.NODE_ENV || false,
-	port: 8080,
-	host: ip.address() || 'localhost',
-	is_cdn: process.env.CDN || false,
-	cdn_url : 'http://www.baidu.com/'
+  	env : process.env.NODE_ENV || false,
+  	port: 8080,
+  	host: ip.address() || 'localhost',
+  	is_cdn: process.env.CDN || false,
+  	cdn_url : 'http://www.baidu.com/'
 };
 
 // ==============

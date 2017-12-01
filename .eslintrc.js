@@ -1,4 +1,5 @@
 module.exports = {
+	parser: 'babel-eslint',
 
     "env": {
         "browser": true,
@@ -18,6 +19,10 @@ module.exports = {
         $: false,
         wx: false,
     },
+
+	"plugins": [
+        "html"
+    ],
 
     "parserOptions": {
         "ecmaFeatures": {
