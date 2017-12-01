@@ -7,6 +7,15 @@ const ip    = require('ip');
 
 /* global process */
 
+// ------------------------------------
+//  build 之后的路径问题，资源的文件目录使用 ../ 
+//  app.js
+//  ------ assets
+//  ------     > images
+//  ------     > css
+//  ------     > js
+//  ------------------------------------
+
 const config = {
   	env : process.env.NODE_ENV || false,
   	port: 8080,

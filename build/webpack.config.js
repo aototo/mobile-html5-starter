@@ -102,19 +102,26 @@ webpackConfig.module.loaders.push({
 });
 
 //'webpack-module-hot-accept'
-//
-
 if (!__DEV__) {
-	webpackConfig.module.loaders.push({
-		test: /\.scss$/,
-		loader: ExtractTextPlugin.extract(
-      'style',
-      `${BASE_CSS_LOADER}!postcss!sass-loader?sourceMap`,
-			{
-        'publicPath': is_cdn ? config.cdn_url : '../'
-			}
-    )
-	})
+
+    // ------------------------------------
+    //  build 之后的路径问题，图片的文件目录 ../
+    //  app.js
+    //  ------ assets
+    //  ------     > images
+    //  ------     > css
+    //  ------     > js
+    //  ------------------------------------
+
+    webpackConfig.module.loaders.push({
+            test: /\.scss$/,
+            loader: ExtractTextPlugin.extract(
+                'style',
+                `${BASE_CSS_LOADER}!postcss!sass-loader?sourceMap`,
+                {'publicPath': is_cdn ? config.cdn_url : '../'
+            });
+    });
+
 } else {
 	webpackConfig.module.loaders.push({
 		test: /\.scss$/,
