@@ -16,8 +16,8 @@ module.exports = {
     globals: {
         // 这里填入你的项目需要的全局变量
         // jQuery: false,
-        $: false,
-        wx: false,
+        $: true,
+        wx: true,
     },
 
 	"plugins": [ "html" ],
