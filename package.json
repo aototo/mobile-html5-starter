@@ -7,7 +7,8 @@
     "build": "npm run clean && npm run webpack ",
     "buildCDN": "npm run clean && CDN=true npm run webpack ",
     "webpack": "webpack --config build/webpack.config.js",
-    "clean": "rimraf dist && mkdir dist"
+    "clean": "rimraf dist && mkdir dist",
+    "eslint": "eslint --ignore-path .eslintignore --fix  app/*"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +21,8 @@
     "backbone.localstorage": "^2.0.0-rc.1",
     "css-loader": "^0.27.3",
     "debug": "^2.6.3",
+    "eslint": "^4.12.1",
+    "eslint-plugin-html": "^4.0.1",
     "file-loader": "^0.11.2",
     "opn": "^4.0.2",
     "readdirp": "^2.1.0",
@@ -54,11 +57,10 @@
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.16.3",
     "webpack-module-hot-accept": "^1.0.4",
-    "eslint": "^3.14.0",
-    "eslint-config-airbnb": "^14.0.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^3.0.2",
-    "eslint-plugin-react": "^6.9.0"
+    "eslint-config-airbnb": "*",
+    "eslint-plugin-import": "*",
+    "eslint-plugin-jsx-a11y": "*",
+    "eslint-plugin-react": "*"
   },
   "keywords": [],
   "description": ""

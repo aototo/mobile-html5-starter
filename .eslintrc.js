@@ -20,9 +20,7 @@ module.exports = {
         wx: false,
     },
 
-	"plugins": [
-        "html"
-    ],
+	"plugins": [ "html" ],
 
     "parserOptions": {
         "ecmaFeatures": {
