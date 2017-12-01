@@ -1,10 +1,15 @@
 module.exports = {
+
     "env": {
         "browser": true,
         "commonjs": true,
         "es6": true
     },
 
+	// 以当前目录为根目录，不再向上查找 .eslintrc.js
+    root: true,
+
+	// 禁止使用 空格 和 tab 混合缩进
     "extends": "eslint:recommended",
 
     globals: {
@@ -22,7 +27,7 @@ module.exports = {
     },
 
     "rules": {
-        "indent": ["error","tab"],
+        "indent": ["error", 'tab'],
 
         "linebreak-style": ["error","unix"],
 
