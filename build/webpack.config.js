@@ -119,7 +119,7 @@ if (!__DEV__) {
                 'style',
                 `${BASE_CSS_LOADER}!postcss!sass-loader?sourceMap`,
                 {'publicPath': is_cdn ? config.cdn_url : '../'
-            });
+            })
     });
 
 } else {
