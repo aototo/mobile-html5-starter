@@ -30,7 +30,7 @@ module.exports = {
     },
 
     "rules": {
-        "indent": ["error", 'tab'],
+        "indent": ["error", 'tab', { "SwitchCase": 1 }],
 
         "linebreak-style": ["error","unix"],
 
