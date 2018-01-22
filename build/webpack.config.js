@@ -153,7 +153,7 @@ webpackConfig.module.loaders.push({
 
 webpackConfig.module.loaders.push(
 	{
-		test: /\.(png|jpg|gif)$/,
+		test: /\.(png|jpg|gif|mp3)$/,
 		loader: 'url-loader?limit=10000&name=images/[hash][name].[ext]'
 	},
 	{
