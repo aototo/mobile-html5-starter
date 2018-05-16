@@ -9,6 +9,8 @@ document.addEventListener('touchmove', function (e) {
 },true);
 
 function app() {
+	mobileUtil.fixScreen();
+	
 	console.log('-------Dom is loaded! running....--------');
 }
 
