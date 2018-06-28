@@ -36,9 +36,9 @@ module.exports = {
 
         "quotes": ["error","single"],
 
-        "semi": ["error","always"],
+        // "semi": ["error","always"],
 
-        "semi": ["error","always"],
+        // "semi": ["error","always"],
 
         "arrow-spacing": ["error", { "before": true, "after": true }],
 
